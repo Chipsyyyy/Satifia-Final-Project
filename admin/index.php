@@ -13,16 +13,24 @@
     include('../db.php');
     include('../include/header.php');
 
-    $products_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tblproducts");
+    // Total products
+    $products_sql = "SELECT COUNT(*) AS total FROM tblproducts";
+    $products_result = mysqli_query($conn, $products_sql);
     $total_products = mysqli_fetch_assoc($products_result)['total'];
 
-    $orders_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tblorders");
+    // Total orders
+    $orders_sql = "SELECT COUNT(*) AS total FROM tblorders";
+    $orders_result = mysqli_query($conn, $orders_sql);
     $total_orders = mysqli_fetch_assoc($orders_result)['total'];
 
-    $buyers_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tblbuyers");
+    // Total registered buyers
+    $buyers_sql = "SELECT COUNT(*) AS total FROM tblbuyers";
+    $buyers_result = mysqli_query($conn, $buyers_sql);
     $total_buyers = mysqli_fetch_assoc($buyers_result)['total'];
 
-    $admins_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tbladmins");
+    // Total admin accounts
+    $admins_sql = "SELECT COUNT(*) AS total FROM tbladmins";
+    $admins_result = mysqli_query($conn, $admins_sql);
     $total_admins = mysqli_fetch_assoc($admins_result)['total'];
 ?>
 
@@ -54,6 +62,15 @@
                 <p class="stat-card-label">Admin Accounts</p>
                 <p class="stat-card-value"><?= $total_admins; ?></p>
                 <p class="stat-card-sub">Active</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <p class="admin-card-title">Quick Links</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="products.php" class="btn-primary">Manage Products</a>
+                <a href="users.php" class="btn-outline">Manage Users</a>
+                <a href="reports.php" class="btn-outline">View Reports</a>
             </div>
         </div>
     </main>
