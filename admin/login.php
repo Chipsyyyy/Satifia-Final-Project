@@ -19,6 +19,13 @@ include('../include/header.php');
             <h1 class="form-card-title">Admin Panel</h1>
             <p class="form-card-sub">Sign in with your administrator credentials.</p>
 
+            <?php if (isset($_SESSION['admin_error'])): ?>
+                <div class="alert alert-danger">
+                    <p><?php echo $_SESSION['admin_error']; ?></p>
+                </div>
+                <?php unset($_SESSION['admin_error']); ?>
+            <?php endif; ?>
+
             <form action="process/admin_checklogin.php" method="post">
                 <div class="form-group">
                     <label class="form-label" for="username">Username</label>
