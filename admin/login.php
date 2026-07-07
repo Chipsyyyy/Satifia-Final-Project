@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (isset($_SESSION['admin_id'])) {
+    header('Location: index.php');
+    exit();
+}
+
 $title = "Admin Login";
 $css_path = "../css/style.css";
 $root_path = "../";
