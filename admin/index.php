@@ -18,6 +18,12 @@
 
     $orders_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tblorders");
     $total_orders = mysqli_fetch_assoc($orders_result)['total'];
+
+    $buyers_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tblbuyers");
+    $total_buyers = mysqli_fetch_assoc($buyers_result)['total'];
+
+    $admins_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM tbladmins");
+    $total_admins = mysqli_fetch_assoc($admins_result)['total'];
 ?>
 
 <div class="admin-layout">
@@ -39,8 +45,21 @@
                 <p class="stat-card-value"><?= $total_orders; ?></p>
                 <p class="stat-card-sub">All time</p>
             </div>
+            <div class="stat-card">
+                <p class="stat-card-label">Registered Users</p>
+                <p class="stat-card-value"><?= $total_buyers; ?></p>
+                <p class="stat-card-sub">Buyers</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-card-label">Admin Accounts</p>
+                <p class="stat-card-value"><?= $total_admins; ?></p>
+                <p class="stat-card-sub">Active</p>
+            </div>
         </div>
     </main>
 </div>
 
-<?php include('../include/footer.php'); ?>
+<?php
+    mysqli_close($conn);
+    include('../include/footer.php');
+?>
