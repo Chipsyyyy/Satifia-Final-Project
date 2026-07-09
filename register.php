@@ -13,7 +13,16 @@
         <h1 class="form-card-title">Create Account</h1>
         <p class="form-card-sub">Join Satifia and start shopping.</p>
 
-        <form action="process/checkregister.php" method="post" novalidate>
+        <?php if(isset($_SESSION['errors'])): ?>
+                <div class="alert alert-danger">
+                    <?php foreach($_SESSION['errors'] as $error): ?>
+                        <p><?= $error; ?></p>
+                    <?php endforeach; ?>
+                </div>
+                <?php unset($_SESSION['errors']); ?>
+            <?php endif; ?>
+
+            <form action="process/checkregister.php" method="post" novalidate>
 
                 <div class="form-group">
                     <label class="form-label" for="fullname">Complete Name</label>
