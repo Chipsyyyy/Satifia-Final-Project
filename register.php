@@ -10,10 +10,10 @@
     <div class="form-page">
         <div class="form-card">
 
-        <h1 class="form-card-title">Create Account</h1>
-        <p class="form-card-sub">Join Satifia and start shopping.</p>
+            <h1 class="form-card-title">Create Account</h1>
+            <p class="form-card-sub">Join Satifia and start shopping.</p>
 
-        <?php if(isset($_SESSION['errors'])): ?>
+            <?php if(isset($_SESSION['errors'])): ?>
                 <div class="alert alert-danger">
                     <?php foreach($_SESSION['errors'] as $error): ?>
                         <p><?= $error; ?></p>
@@ -70,6 +70,9 @@
                 <button type="submit" name="submit" class="form-submit">Create Account</button>
             </form>
             
+            <p class="form-footer-text">
+                Already have an account? <a href="login.php">Login here</a>
+            </p>
         </div>
     </div>
 </div>
