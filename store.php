@@ -8,11 +8,13 @@
      // Get category filter from URL
     $category = isset($_GET['category']) ? $_GET['category'] : 'all';
 
+
     include('include/header.php');
     include('include/navigation.php');
 ?>
 
 <div class="page-wrapper">
+
 
 
     <div class="page-title-strip">
@@ -68,12 +70,35 @@
                     <h3 class="product-name"><?= htmlspecialchars($product['name']); ?></h3>
                     <p class="product-price">&#8369;<?= number_format($product['price'], 2); ?></p>
                 </div>
+                
+                <?php if($product['stock'] > 0): ?>
+                <form action="process/add_to_cart.php" method="post">
+                    <input type="hidden" name="product_id"    value="<?= $product['id']; ?>">
+                    <input type="hidden" name="product_name"  value="<?= htmlspecialchars($product['name']); ?>">
+                    <input type="hidden" name="product_price" value="<?= $product['price']; ?>">
+                    <input type="hidden" name="product_image" value="<?= htmlspecialchars($product['image']); ?>">
+                    <input type="hidden" name="redirect"      value="store.php?category=<?= $category; ?>">
+                    <button type="submit" name="submit" class="product-add-btn">Add to Cart</button>
+                </form>
+                <?php else: ?>
+                <button class="product-add-btn" disabled style="opacity:0.4; cursor:not-allowed;">Out of Stock</button>
+                <?php endif; ?>
             </div>
             <?php endwhile; ?>
         </div>
 
+
+        <?php if($total_products == 0): ?>
+        <div style="text-align:center; padding: 60px 0; color: var(--charcoal);">
+            <p style="font-family: var(--font-display); font-size: 24px; font-weight:300;">No products found.</p>
+            <p style="font-size: 13px; margin-top:8px;">Try a different category.</p>
+        </div>
+
+        <?php endif; ?>
+
     </div>
 </div>
+
 
 <?php
     mysqli_close($conn);
