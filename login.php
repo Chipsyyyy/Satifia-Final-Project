@@ -48,7 +48,7 @@
                 <button type="submit" name="submit" class="form-submit">Sign In</button>
             </form>
 
-             <p class="form-footer-text">
+            <p class="form-footer-text">
                 No account yet? <a href="register.php">Register here</a>
             </p>
         </div>
