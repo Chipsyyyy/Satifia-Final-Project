@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include('../db.php')
+    include('../db.php');
+    require('../mailer.php');
 
     if(isset($_POST['submit'])) {
         $fullname = $_POST['fullname'];
@@ -83,6 +84,7 @@
                 $contact
             );
 
+            // Generate confirmation token
             $token = bin2hex(random_bytes(32));
 
             $insert_sql = "INSERT INTO tblbuyers
@@ -92,7 +94,17 @@
                            '$address_safe', '$contact_safe', '$token')";
 
             if(mysqli_query($conn, $insert_sql)) {
-                $_SESSION['success'] = "Registration successful!";
+                try {
+                    send_confirmation_email(
+                        $email,
+                        $fullname,
+                        $token
+                    );
+
+                    $_SESSION['success'] = "Registration successful! Please check your email to confirm your account before logging in.";
+                } catch (Exception $e) {
+                    $_SESSION['success'] = "Registration successful, but confirmation email was not sent. Please contact support.";
+                }
 
                 mysqli_close($conn);
 
