@@ -33,7 +33,7 @@
                 </div>
                 <?php unset($_SESSION['success']); ?>
             <?php endif; ?>
-            
+
             <form action="process/checklogin.php" method="post" novalidate>
                 <div class="form-group">
                     <label class="form-label" for="email">Email Address</label>
@@ -48,6 +48,9 @@
                 <button type="submit" name="submit" class="form-submit">Sign In</button>
             </form>
 
+             <p class="form-footer-text">
+                No account yet? <a href="register.php">Register here</a>
+            </p>
         </div>
     </div>
 </div>
