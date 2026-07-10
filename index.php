@@ -19,7 +19,6 @@
         <a href="store.php" class="btn-primary">Shop the Collection</a>
     </section>
 
-
      <!-- CATEGORIES -->
     <section class="category-strip">
         <div class="section-header">
@@ -86,6 +85,14 @@
          <div style="text-align:center; margin-top: 40px;">
             <a href="store.php" class="btn-outline">View All Products</a>
         </div>
+    </section>
+
+     <!-- BRAND STRIP -->
+      <section style="background-color: var(--nude); padding: 60px 40px; text-align:center;">
+        <p style="font-family: var(--font-display); font-size: clamp(22px, 3vw, 34px); font-weight:300; color: white; letter-spacing: 0.05em;">
+             "Style is a way to say who you are<br>without having to speak."
+        </p>
+        <p style="font-size: 12px; letter-spacing: 0.15em; color: rgba(255,255,255,0.75); margin-top: 16px; text-transform: uppercase;">— The Satifia Promise</p>
     </section>
 
 </div>
