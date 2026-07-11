@@ -35,3 +35,58 @@ include('include/navigation.php');
 <div class="about-divider"></div>
 
 <div class="about-mission">
+    <h2 class="about-mission-title">Our Story</h2>
+    <p class="about-mission-text">
+        Satifia started as a passion project between four friends who shared a love for fashion and a frustration with fast fashion. We wanted pieces that were beautiful, affordable, and made to last - so we built the brand we always wished existed. Today, Satifia carries that same heart in every design.
+</p>
+</div>
+</div>
+
+<section class="team-section">
+    <div class="section-header">
+        <p class+"section-eyebrow">The People Behind Satifia</p>
+        <h2 class="section-title">Meet Our Team</h2>
+</div>
+
+<div class="team-grid">
+    <div class="team-card">
+        <div class="team-avatar" style="overflow:hidden; padding:0;">
+            <img src="images/sam.jpg" alt="Sam Kenneth Nieves"
+            style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Sam Kenneth Nieves</h3>
+<p class="team-role">Group Leader</p>
+</div>
+
+<div class="team-card">
+    <div class="team-avatar" style="overflow:hidden; padding:0;">
+        <img src="images/kristine.jpg" alt="Kristine Joy Sarzuelo"
+        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Kristine Joy Sarzuelo</h3>
+<p class="team-role">Member</p>
+</div>
+
+<div class="team-card">
+    <div class="team-avatar" style="overflow:hidden; padding:0;">
+        <img src="images/fiona.jpg" alt="Fiona Nicole Rivas</h3>
+        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Fiona Nicole Rivas</h3>
+<p class="team-role">Member</p>
+</div>
+
+<div class="team-card">
+    <div class="team-avatar" style="overflow:hidden; padding:0;">
+        <img src="images/ann.jpg" alt="Ann Raye Esquivias"
+        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Ann Raye Esquivias</h3>
+<p class="team-role">Member</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<?php include('include/footer.php'); ?>
