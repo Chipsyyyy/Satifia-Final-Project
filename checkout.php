@@ -129,4 +129,45 @@ include('include/navigation.php');
                     >
                 </div>
 
-                <h2 class=
+                <h2 class="checkout-section-title" style="margin-top: 36px;">
+                    Payment Method
+                </h2>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                    
+                <label style="display:flex; align-items: center; gap: 12px; font-size: 14px; cursor: pointer; padding: 14px 16px; border: 1px solid var(--border); background:var(--white); ">
+                    <input
+                    type="radio"
+                    name="payment_method"
+                    value="cod"
+                    checked
+                    >
+                    Cash on Delivery (COD)
+                </label>
+
+                <label style="display:flex; align-items: center; gap: 12px; font-size: 14px; cursor: pointer; padding: 14px 16px; border: 1px solid var(--border); background:var(--white); ">
+                    <input
+                    type="radio"
+                    name="payment_method"
+                    value="gcash"
+                    >
+                    GCash
+                </label>
+
+                <label style="display:flex; align-items: center; gap: 12px; font-size: 14px; cursor: pointer; padding: 14px 16px; border: 1px solid var(--border); background:var(--white); ">
+                    <input
+                    type="radio"
+                    name="payment_method"
+                    value="bank"
+                    >
+                    Bank Transfer
+                </label>
+
+                </div>
+
+                <button type="submit" name="submit" class="btn-primary">
+                    Place Order &rarr;
+                </button>
+                </div>
+
+                
