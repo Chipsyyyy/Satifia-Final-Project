@@ -6,4 +6,7 @@
     unset($_SESSION['buyer_email']);
     unset($_SESSION['buyer_address']);
     unset($_SESSION['buyer_contact']);
+    session_destroy();
+    header('Location: ../login.php');
+    exit();
 ?>
