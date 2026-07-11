@@ -170,4 +170,61 @@ include('include/navigation.php');
                 </button>
                 </div>
 
-                
+                <div class="checkout-order-summary">
+                    <h2 class="cart-summary-title">
+                        Order Summary
+                    </h2>
+
+                    <?php foreach($cart as $item): ?>
+                        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">
+
+                        <span>
+                            <?= htmlspecialchars($item['name']); ?>
+                            
+                            <span style="color: var(--charcoal);">
+                                &times; <?= $item['qty']; ?> 
+                                </span>
+                        </span>
+
+                        <span>
+                            &#8369;<?= number_format(
+                            (float) str_replace(',','', $item['price']) * $item['qty'],
+                             2
+                            ); ?>
+                        </span>
+
+                        </div>
+                    <?php endforeach; ?>
+
+                    <div class="cart-summary-row">
+                        <span>Subtotal</span>
+                        <span>
+                            &#8369;<?= number_format($subtotal, 2); ?>
+                        </span>
+                    </div>
+
+                    <div class="cart-summary-row">
+                        <span>Shipping</span>
+                        
+                        <span>
+                            <?= $shipping == 0
+                            ? '<span style="color: var(--sucess)">FREE</span>'
+                            : '&#8369;' . number_format($shipping, 2);
+                            ?>
+                        </span>
+                        </div>
+
+                        <div class="cart-summary-total">
+                            <span>Total</span>
+                            
+                            <span>
+                                &#8369;<?= number_format($total, 2); ?>
+                            </span>
+                        </div>
+                    </div>
+                    </div>
+            </form>
+                    </div>
+                    </div>
+
+                    <?php include('include/footer.php'); ?>
