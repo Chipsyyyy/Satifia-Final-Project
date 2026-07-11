@@ -85,3 +85,48 @@ include('include/navigation.php');
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label class="form-label" for="recv_contact">
+                            Contact Number
+                        </label>
+
+                        <input
+                        type="text"
+                        class="form-control"
+                        name="recv_contact"
+                        id="recv_contact"
+                        placeholder="09XXXXXXXXX"
+                        value="<?= htmlspecialchars($_SESSION['buyer_contact']) ?>"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="recv_email">
+                            Email
+                        </label>
+                        
+                        <input
+                        type="email"
+                        class="form-control"
+                        name="recv_email"
+                        id="recv_email"
+                        placeholder="For order confirmation"
+                        value="<?= htmlspecialchars($_SESSION['buyer_email']) ?>"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="notes">
+                        Order Notes (Optional)
+                    </label>
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="notes"
+                    id="notes"
+                    placeholder="Any special instructions?"
+                    >
+                </div>
+
+                <h2 class=
