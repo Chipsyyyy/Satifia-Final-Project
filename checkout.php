@@ -49,4 +49,39 @@ include('include/navigation.php');
                 <div class="checkout-layout">
 
                 <div>
-                    <h2 class=
+                    <h2 class="checkout-section-title">
+                        Shipping Information
+                    </h2>
+
+                    <div class="form-group">
+                        <label class="form-label" for="recv_name">
+                            Recipient Name
+                        </label>
+
+                        <input
+                        type="text"
+                        class="form-control"
+                        name="recv_name"
+                        id="recv_name"
+                        placeholder="Full name of the recipient"
+                        value="<?= htmlspecialchars($_SESSION['buyer_name']) ?>"
+                        >
+                </div>
+
+                <div class="form-group">
+                        <label class="form-label" for="recv_address">
+                            Delivery Adress
+                        </label>
+
+                        <input
+                        type="text"
+                        class="form-control"
+                        name="recv_address"
+                        id="recv_address"
+                        placeholder="Street, Barangay, City, Province"
+                        value="<?= htmlspecialchars($_SESSION['buyer_address']) ?>"
+                        >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
