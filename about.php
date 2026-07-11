@@ -58,3 +58,35 @@ include('include/navigation.php');
 <p class="team-role">Group Leader</p>
 </div>
 
+<div class="team-card">
+    <div class="team-avatar" style="overflow:hidden; padding:0;">
+        <img src="images/kristine.jpg" alt="Kristine Joy Sarzuelo"
+        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Kristine Joy Sarzuelo</h3>
+<p class="team-role">Member</p>
+</div>
+
+<div class="team-card">
+    <div class="team-avatar" style="overflow:hidden; padding:0;">
+        <img src="images/fiona.jpg" alt="Fiona Nicole Rivas</h3>
+        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Fiona Nicole Rivas</h3>
+<p class="team-role">Member</p>
+</div>
+
+<div class="team-card">
+    <div class="team-avatar" style="overflow:hidden; padding:0;">
+        <img src="images/ann.jpg" alt="Ann Raye Esquivias"
+        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+<h3 class="team-name">Ann Raye Esquivias</h3>
+<p class="team-role">Member</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<?php include('include/footer.php'); ?>
