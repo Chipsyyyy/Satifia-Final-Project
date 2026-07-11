@@ -25,3 +25,28 @@ foreach($cart as $item) {
 $shipping = ($subtotal >= 1500) ? 0 : 150;
 $total = $subtotal + $shipping;
 
+include('include/header.php');
+include('include/navigation.php');
+?>
+
+<div class="page-wrapper">
+    <div class="checkout page">
+        <h1 style="font-family: var(--font-display); font-size: 36px; font-weight: 300; margin-bottom: 36px;">
+            Checkout
+        </h1>
+
+        <?php if(isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger">
+                <?php foreach($_SESSION['errors'] as $error): ?>
+                    <p><?= $error ?></p>
+                <?php endforeach; ?>
+            </div>
+
+            <?php unset($_SESSION['errors']); ?>
+            <?php endif; ?>
+
+            <form action="process/process_checkout.php" method="post" novalidate>
+                <div class="checkout-layout">
+
+                <div>
+                    <h2 class=
