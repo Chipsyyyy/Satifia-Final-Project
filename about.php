@@ -17,3 +17,21 @@ include('include/navigation.php');
 
 <div class="about-section">
     <div class="about-mission">
+        <h2 class="about-mission-title">Our Mission</h2>
+        <p class="about-mission-text">
+            At Satifia, we design for the modern Filipino woman - one who moves through life with confidence, creativity, and purpose. Our places are crafted to bridge everyday comfort with elevated style, so you never have to choose between looking good and feeling good.
+</p>
+</div>
+
+<div classs="about-divider"></div>
+
+<div class="about-mission">
+    <h2 class="about-mission-title">Our Vision</h2>
+    <p class="about-mission-text">
+        To become a leading homegrown fashion brand that celebrates Filipino women in all their forms - through clothing that empowers, inspires, and lasts beyond the season.
+</p>
+</div>
+
+<div class="about-divider"></div>
+
+<div class="about-mission">
