@@ -70,6 +70,42 @@ if(isset($_POST['submit'])) {
             'bank' => 'Bank Transfer',
         );
 
+        $payment_label = isset($method_labels[$payment_method])
+        ? $method_labels[$payment_method]
+        : $payment_method;
+
+        $buyer_id_safe = (int) $_SESSION['buyer_id'];
+
+        $recv_name_safe = mysqli_real_escape_string(
+            $conn,
+            $recv_name
+        );
+
+        $recv_address_safe = mysqli_real_escape_string(
+            $conn,
+            $recv_address
+        );
+
+        $recv_contact_safe = mysqli_real_escape_string(
+            $conn,
+            $recv_contact
+        );
+
+        $recv_email_safe = mysqli_real_escape_string(
+            $conn,
+            $recv_email
+        );
+
+        $payment_label_safe = mysqli_real_escape_string(
+            $conn,
+            $payment_label
+        );
+
+        $total_safe = (float) $total;
+
+
+    
+
 
 
         }
