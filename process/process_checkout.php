@@ -49,7 +49,26 @@ if(isset($_POST['submit'])) {
 
         $cart = $_SESSION['cart'];
 
-        
+        if(empty($cart)) {
+            header('Location: ../cart.php');
+            exit();
+        }
+
+        $subtotal = 0;
+
+        foreach($cart as $item) {
+            $price = (float) str_replace(',','', $item['price']);
+            $subtotal += $price * $item['qty'];
+        }
+
+        $shipping = ($subtotal >= 1500) ? 0 : 150;
+        $total = $subtotal + $shipping;
+
+        $method_labels = array(
+            'cod' => 'Cash On Delivery (COD)',
+            'gcash' => 'Gcash',
+            'bank' => 'Bank Transfer',
+        );
 
 
 
