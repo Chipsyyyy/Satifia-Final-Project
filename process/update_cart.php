@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-     if(isset($_POST['cart_key']) && isset($_POST['qty'])) {
+    if(isset($_POST['cart_key']) && isset($_POST['qty'])) {
         $key = (int)$_POST['cart_key'];
         $qty = (int)$_POST['qty'];
 
