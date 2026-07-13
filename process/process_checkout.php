@@ -103,6 +103,65 @@ if(isset($_POST['submit'])) {
 
         $total_safe = (float) $total;
 
+        $order_sql = "
+        INSERT INTO tblorders
+        (
+        buyer_id,
+        recipient_name,
+        address,
+        contact,
+        email,
+        payment_method,
+        total
+        )
+        VALUES
+        (
+        '$buyer_id_safe',
+        '$recv_name_safe',
+        '$recv_address_safe',
+        '$recv_contact_safe',
+        '$recv_email_safe',
+        '$payment_label_safe',
+        '$total_safe'
+        )
+        ";
+
+        if(mysqli_query($conn, $order_sql)) {
+            $order_id = mysqli_insert_id($conn);
+
+            foreach($cart as $item) {
+                $item_name_safe = mysqli_real_escape_string(
+                    $conn,
+                    $item['name']
+                );
+
+                $item_price_safe = (float) str_replace(
+                    ',',
+                    '',
+                    $item['price']
+                );
+
+                $item_qty_safe = (int) $item['qty'];
+
+                $item_sql = "
+                INSERT INTO tblorder_items
+                (
+                order_id,
+                product_name,
+                price,
+                qty
+                )
+                VALUES
+                (
+                '$order_id',
+                '$item_name_safe',
+                '$item_price_safe',
+                '$item_qty_safe'
+                )
+                ";
+            }
+        }
+
 
     
 
