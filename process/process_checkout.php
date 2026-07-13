@@ -159,8 +159,54 @@ if(isset($_POST['submit'])) {
                 '$item_qty_safe'
                 )
                 ";
+
+                mysqli query($conn, $item sql);
+
+                if(!empty($item['id'])) {
+                    $product_id_safe = (int) $item['id'];
+
+                    $update_stock_sql = "
+                    UPDATE tblproducts
+                    SET stock = stock - '$item_qty_safe'
+                    WHERE id = '$product_id_safe'
+                    AND stock >= '$item_qty_safe'
+                    ";
+
+                    mysql_query($conn, $update_stock_sql);
+                }
             }
+
+            $_SESSION['order_summary'] = array(
+                'order_number' => 'ORD-' . str_pad(
+                    $order_id,
+                    6,
+                    '0',
+                    STR_PAD_LEFT
+                ),
+                'items' => $cart,
+                'total' => $total,
+                'address' => $recv_address,
+                'email' => $recv_email,
+                'payment_method' => $payment_label
+            );
+
+            mysqli_close($conn);
+
+            header('Location: ../payment.php');
+            exit();
+
+        } else {
+            $_SESSION['errors'] = array(
+                "Something went wrong while placing your order. Please try again"
+            );
+
+            mysqli_close($conn);
+
+            header('Location: ../checkout.php');
+            exit();
         }
+    }
+?>
 
 
     
