@@ -5,5 +5,4 @@
     }
     header('Location: ../cart.php');
     exit();
-
 ?>
