@@ -71,3 +71,77 @@ include('include/navigation.php');
     <p style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--charcoal); margin-bottom:4px;">
         Deliver To
 </p>
+
+<p style="font-weight:500;">
+    <?= htmlspecialchars($order['address']); ?>
+</p>
+</div>
+
+<div>
+    <p style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--charcoal); margin-bottom:4px">
+        Total Paid
+</p>
+
+<p style="font-weight:500; color:var(--nude); font-size:18px;">
+    &#8369;<?= number_format($order['total'], 2); ?>
+</p>
+</div>
+
+</div>
+
+<div style="border-top:1px solid var(--border); padding-top:16px;">
+    <?php foreach($order['items'] as $item): ?>
+        <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:10px;">
+
+        <span>
+            <?= htmlspecialchars($item['name']); ?>
+            &times;
+            <?= $item['qty']; ?>
+    </spam>
+
+    <span>
+        &#8369;<?= number_format(
+            (float) str_replace(',', '',
+            $item['price']) * $item['qty'],
+            2
+            ); ?>
+            </span>
+
+    </div>
+    <?php endforeach; ?>
+
+    </div>
+
+    </div>
+
+    <?php if($order['payment_method'] == 'GCash'): ?>
+        <div style="background-color:#e8f4ff; border:1px solid #b3d7ff; padding:20px; text-align:left; margin-bottom:32px;">
+
+        <p style="font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px;">
+            GCash Payment Instructions
+    </p>
+
+    <p style="font-size:13px; color:var(--charcoal);">
+        Please Send
+        &#8369;<?= number_format($order['total'], 2); ?>
+        To:
+        <br>
+
+        <strong>
+            09XX-XXX-XXXX (Satifia Official)
+    </strong>
+    <br>
+
+    Use your order number
+    <strong>
+        #<?= $order['order_number']; ?>
+    <strong>
+        as the reference.
+    </p>
+
+    </div>
+
+    <?php elseif($order['payment_method'] == 'Bank Transfer'): ?>
+
+        <div style=
+        )
