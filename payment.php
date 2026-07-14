@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 session_start();
 
 if(!isset($_SESSION['buyer_id'])) {
@@ -20,6 +21,8 @@ include('include/header.php');
 include('include/navigation.php');
 
 =======
+=======
+>>>>>>> 049c3827f180b5305a26ed8d826b2f27cc8c527a
     session_start();
 
     if(!isset($_SESSION['buyer_id'])) {
@@ -38,12 +41,16 @@ include('include/navigation.php');
 
     include('include/header.php');
     include('include/navigation.php');
+<<<<<<< HEAD
 >>>>>>> 01b832031bddf39edd614db7258974c9518bef82
+=======
+>>>>>>> 049c3827f180b5305a26ed8d826b2f27cc8c527a
 ?>
 
 <div class="page-wrapper">
     <div style="max-width: 700px; margin: 0 auto; padding: 80px 40px; text-align: center;">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div style="width:80px; height:80px; border-radius:50%; background-color:#e0f2e9; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; font-size:36px;">
         &#10003;
@@ -214,6 +221,8 @@ include('include/navigation.php');
     include('include/footer.php');
     ?>
 =======
+=======
+>>>>>>> 049c3827f180b5305a26ed8d826b2f27cc8c527a
         <div style="width: 80px; height: 80px; border-radius: 50%; background-color: #e0f2e9; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 36px;">
             &#10003;
         </div>
@@ -296,4 +305,7 @@ include('include/navigation.php');
     unset($_SESSION['order_summary']);
     include('include/footer.php');
 ?>
+<<<<<<< HEAD
 >>>>>>> 01b832031bddf39edd614db7258974c9518bef82
+=======
+>>>>>>> 049c3827f180b5305a26ed8d826b2f27cc8c527a
