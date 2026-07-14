@@ -32,3 +32,11 @@
                 </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">&#9888; This website is for educational purposes only and is a requirement for the Final Project in CCS0043. | Group: Satifia</p>
+            <p class="footer-copy">&copy; <?= date('Y'); ?> Satifia. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
