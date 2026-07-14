@@ -143,5 +143,51 @@ include('include/navigation.php');
 
     <?php elseif($order['payment_method'] == 'Bank Transfer'): ?>
 
-        <div style=
-        )
+        <div style="background-color:#fff8e8; border:1px solid #ffe0b2; padding:20px; text-align:left; margin-bottom:32px;">
+
+        <p style="font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px;">
+            Bank Transfer Instructions
+    </p>
+
+    <p style="font-size:13px; color:var(--charcoal);">
+        Transfer
+        $#8369;<?= number_format($order['total'], 2); ?>
+        To:
+        <br>
+
+        <strong>
+            BDO Savings - Account: 0000-1234-5678
+            (Satifia Co.)
+    </strong>
+    <br>
+
+    Include order number
+    <strong>
+        #<?= $order['order_number']; ?>
+    </strong>
+    in the remarks.
+    </p>
+
+    </div>
+
+    <?php endif; ?>
+
+    <div style="display:flex; gap:16px; justify-content:center;">
+        <a href="store.php" class="btn-primary">
+            Continue Shopping
+    </a>
+
+    <a href="index.php" class="btn-outline">
+        Back to Home
+    </a>
+    </div>
+
+    </div>
+</div>
+
+    <?php
+    unset($_SESSION['CART']);
+    UNSET($_SESSION['order_summary']);
+
+    include('include/footer.php');
+    ?>
