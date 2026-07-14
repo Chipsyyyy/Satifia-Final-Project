@@ -31,4 +31,9 @@
     }
 
     mysqli_close($conn);
+
+    $title = "Account Confirmation";
+    $active_nav = "";
+    include('include/header.php');
+    include('include/navigation.php');
 ?>
