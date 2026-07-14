@@ -31,7 +31,6 @@
             $errors[] = "Passwords do not match.";
         }
 
-        // Check if username is already taken (by a different user)
         if(empty($errors) && !empty($username)) {
             $username_safe = mysqli_real_escape_string($conn, $username);
             $check_sql = $is_edit
@@ -60,13 +59,13 @@
             $user_id_safe = (int) $user_id;
 
             if(!empty($password)) {
-                // Update with new password
+              
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                 $sql = "UPDATE tbladmins
                         SET fullname = '$fullname_safe', username = '$username_safe', role = '$role_safe', password = '$hashed_password'
                         WHERE id = '$user_id_safe'";
             } else {
-                // Keep existing password
+                
                 $sql = "UPDATE tbladmins
                         SET fullname = '$fullname_safe', username = '$username_safe', role = '$role_safe'
                         WHERE id = '$user_id_safe'";
@@ -82,7 +81,7 @@
                 ? "User \"$fullname\" updated successfully."
                 : "User \"$fullname\" added successfully.";
 
-            // Log this action
+            
             $admin_id_safe   = (int) $_SESSION['admin_id'];
             $admin_name_safe = mysqli_real_escape_string($conn, $_SESSION['admin_name']);
             $log_action      = $is_edit ? "Updated admin user: $fullname" : "Added new admin user: $fullname";
