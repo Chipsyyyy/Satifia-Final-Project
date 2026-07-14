@@ -37,3 +37,27 @@
     include('include/header.php');
     include('include/navigation.php');
 ?>
+
+<div class="page-wrapper">
+    <div class="form-page">
+        <div class="form-card" style="text-align: center;">
+            <h1 class="form-card-title">Account Confirmation</h1>
+
+            <?php if($type == 'success'): ?>
+                <div style="margin: 24px 0;">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background-color: #e0f2e9; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">&#10003;</div>
+                    <p style="font-size: 14px; color: var(--charcoal);"><?= $message; ?></p>
+                </div>
+                <a href="login.php" class="btn-primary">Proceed to Login</a>
+            <?php else: ?>
+                <div style="margin: 24px 0;">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background-color: #fce4e4; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">&#10007;</div>
+                    <p style="font-size: 14px; color: var(--danger);"><?= $message; ?></p>
+                </div>
+                <a href="register.php" class="btn-outline">Back to Register</a>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<?php include('include/footer.php'); ?>
