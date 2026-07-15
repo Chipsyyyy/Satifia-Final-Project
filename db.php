@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "satifia_db";
+$host = "sql309.infinityfree.com";
+$username = "if0_42410940";
+$password = "sksqk8xaB1ul8m";
+$database = "if0_42410940_satifia_db";
 
 $conn = mysqli_connect($host, $username, $password, $database);
 
