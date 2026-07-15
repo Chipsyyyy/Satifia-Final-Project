@@ -22,7 +22,7 @@ function send_confirmation_email($to_email, $to_name, $token) {
     $mail->setFrom("no-reply@satifia.com", "Satifia");
     $mail->addAddress($to_email, $to_name);
 
-    $confirm_link = "http://localhost/Satifia/confirm.php?token=" . $token;
+    $confirm_link = "https://satifia.freehosting.dev/confirm.php?token=" . $token;
 
     $mail->isHTML(true);
     $mail->Subject = "Confirm your Satifia account";
