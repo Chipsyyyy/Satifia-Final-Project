@@ -1,0 +1,17 @@
+Test Accounts:
+
+USER:
+
+email: satifia2026@gmail.com
+password: SaTiFiA26@
+
+Link: https://satifia.freehosting.dev/
+
+
+
+ADMIN:
+
+username: admin
+pass: admin123
+
+Link: https://satifia.freehosting.dev/admin/login.php
